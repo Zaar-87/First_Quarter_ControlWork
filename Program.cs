@@ -11,11 +11,15 @@
 {"Russia", "Denmark", "Kazan"} // -> {}
 */
 
+//input and output
 string[] inputArray = GetArray();
 int count = WordsCount(inputArray);
 string[] finalArray = ResultArray(inputArray, count);
 Console.WriteLine($"[{String.Join(", ", inputArray)}] -> [{String.Join(", ", finalArray)}]");
 
+//functions
+
+//function that filling the array with data from the user
 string[] GetArray()
 {
     Console.WriteLine("How many words would be in the array?");
@@ -29,6 +33,7 @@ string[] GetArray()
     return inputArray;
 }
 
+//definition words with three character or less
 int WordsCount(string[] inputArray)
 {
     int count = 0;
@@ -42,6 +47,7 @@ int WordsCount(string[] inputArray)
     return count;
 }
 
+//forming final array with words with three character or less
 string[] ResultArray(string[] inputArray, int newLenght)
 {
     string[] finalArray = new string[newLenght];
