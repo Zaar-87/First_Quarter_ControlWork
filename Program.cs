@@ -11,30 +11,30 @@
 {"Russia", "Denmark", "Kazan"} // -> {}
 */
 
-string[] initArray = GetArray();
-int count = WordsCount(initArray);
-string[] finalArray = ResultArray(initArray, count);
-Console.WriteLine($"[{String.Join(", ", initArray)}] -> [{String.Join(", ", finalArray)}]");
+string[] inputArray = GetArray();
+int count = WordsCount(inputArray);
+string[] finalArray = ResultArray(inputArray, count);
+Console.WriteLine($"[{String.Join(", ", inputArray)}] -> [{String.Join(", ", finalArray)}]");
 
 string[] GetArray()
 {
     Console.WriteLine("How many words would be in the array?");
     int stringLength = int.Parse(Console.ReadLine()!);
     Console.WriteLine("Please, enter the words: ");
-    string[] formedArray = new string[stringLength];
+    string[] inputArray = new string[stringLength];
     for (int i = 0; i < stringLength; i++)
     {
-        formedArray[i] = Console.ReadLine()!;
+        inputArray[i] = Console.ReadLine()!;
     }
-    return formedArray;
+    return inputArray;
 }
 
-int WordsCount(string[] formedArray)
+int WordsCount(string[] inputArray)
 {
     int count = 0;
-    for (int i = 0; i < formedArray.Length; i++)
+    for (int i = 0; i < inputArray.Length; i++)
     {
-        if (formedArray[i].Length <= 3)
+        if (inputArray[i].Length <= 3)
         {
             count++;
         }
@@ -42,17 +42,17 @@ int WordsCount(string[] formedArray)
     return count;
 }
 
-string[] ResultArray(string[] formedArray, int newLenght)
+string[] ResultArray(string[] inputArray, int newLenght)
 {
-    string[] resultArray = new string[newLenght];
+    string[] finalArray = new string[newLenght];
     int k = 0;
-    for (int i = 0; i < formedArray.Length; i++)
+    for (int i = 0; i < inputArray.Length; i++)
     {
-        if (formedArray[i].Length <= 3)
+        if (inputArray[i].Length <= 3)
         {
-            resultArray[k] = formedArray[i];
+            finalArray[k] = inputArray[i];
             k++;
         }
     }
-    return resultArray;
+    return finalArray;
 }
