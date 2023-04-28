@@ -23,10 +23,10 @@ Console.WriteLine($"[{String.Join(", ", inputArray)}] -> [{String.Join(", ", fin
 string[] GetArray()
 {
     Console.WriteLine("How many words would be in the array?");
-    int stringLength = int.Parse(Console.ReadLine()!);
+    int arrayLength = int.Parse(Console.ReadLine()!);
     Console.WriteLine("Please, enter the words: ");
-    string[] inputArray = new string[stringLength];
-    for (int i = 0; i < stringLength; i++)
+    string[] inputArray = new string[arrayLength];
+    for (int i = 0; i < arrayLength; i++)
     {
         inputArray[i] = Console.ReadLine()!;
     }
